@@ -14,9 +14,9 @@ jobs:
       - name: Tag matches manifest.yaml
         run: test "v$(grep -m1 '^version:' manifest.yaml | awk '{print $2}')" = "${GITHUB_REF_NAME}"
       - run: |
-          curl -fsSL -o dify-plugin https://github.com/langgenius/dify-plugin-daemon/releases/download/0.6.15/dify-plugin-linux-amd64
-          chmod +x dify-plugin
-          ./dify-plugin plugin package . -o reelspan-${GITHUB_REF_NAME}.difypkg
+          curl -fsSL -o "$RUNNER_TEMP/dify-plugin" https://github.com/langgenius/dify-plugin-daemon/releases/download/0.6.15/dify-plugin-linux-amd64
+          chmod +x "$RUNNER_TEMP/dify-plugin"
+          "$RUNNER_TEMP/dify-plugin" plugin package . -o reelspan-${GITHUB_REF_NAME}.difypkg
           gh release upload "${GITHUB_REF_NAME}" reelspan-${GITHUB_REF_NAME}.difypkg --clobber
         env:
           GH_TOKEN: ${{ github.token }}
