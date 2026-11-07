@@ -1,0 +1,40 @@
+identity:
+  name: write_captions
+  author: reelspan
+  label:
+    en_US: Write captions
+description:
+  human:
+    en_US: Write a caption for each network from a short description of the post (uses one Reelspan AI credit).
+  llm: Write a caption for each network from a short description of the post (uses one Reelspan AI credit).
+parameters:
+- name: text
+  type: string
+  required: true
+  label:
+    en_US: About the post
+  human_description:
+    en_US: What the post is about
+  llm_description: What the post is about
+  form: llm
+- name: platforms
+  type: string
+  required: false
+  label:
+    en_US: Networks
+  human_description:
+    en_US: Comma-separated; empty for the usual ones
+  llm_description: Comma-separated; empty for the usual ones
+  form: llm
+- name: language
+  type: string
+  required: false
+  label:
+    en_US: Language
+  human_description:
+    en_US: e.g. en, es, de
+  llm_description: e.g. en, es, de
+  form: llm
+extra:
+  python:
+    source: tools/write_captions.py

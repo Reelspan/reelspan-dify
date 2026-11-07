@@ -1,0 +1,22 @@
+identity:
+  name: cancel_scheduled
+  author: reelspan
+  label:
+    en_US: Cancel scheduled post
+description:
+  human:
+    en_US: Cancel a scheduled post so it is never published.
+  llm: Cancel a scheduled post so it is never published.
+parameters:
+- name: job_id
+  type: string
+  required: true
+  label:
+    en_US: Job ID
+  human_description:
+    en_US: The scheduled post's job_id
+  llm_description: The scheduled post's job_id
+  form: llm
+extra:
+  python:
+    source: tools/cancel_scheduled.py

@@ -1,0 +1,40 @@
+identity:
+  name: get_analytics
+  author: reelspan
+  label:
+    en_US: Get analytics
+description:
+  human:
+    en_US: Followers, reach and engagement of a profile per network; with days, a day-by-day history; with request_id, one post's numbers.
+  llm: Followers, reach and engagement of a profile per network; with days, a day-by-day history; with request_id, one post's numbers.
+parameters:
+- name: profile
+  type: string
+  required: false
+  label:
+    en_US: Profile
+  human_description:
+    en_US: The profile username
+  llm_description: The profile username
+  form: llm
+- name: days
+  type: number
+  required: false
+  label:
+    en_US: Days
+  human_description:
+    en_US: Day-by-day history of this many days
+  llm_description: Day-by-day history of this many days
+  form: llm
+- name: request_id
+  type: string
+  required: false
+  label:
+    en_US: Post request ID
+  human_description:
+    en_US: One post's numbers instead
+  llm_description: One post's numbers instead
+  form: llm
+extra:
+  python:
+    source: tools/get_analytics.py

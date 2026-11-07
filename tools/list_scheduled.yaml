@@ -1,0 +1,22 @@
+identity:
+  name: list_scheduled
+  author: reelspan
+  label:
+    en_US: List scheduled posts
+description:
+  human:
+    en_US: Posts waiting for their scheduled time.
+  llm: Posts waiting for their scheduled time.
+parameters:
+- name: profile
+  type: string
+  required: false
+  label:
+    en_US: Profile
+  human_description:
+    en_US: Only this profile
+  llm_description: Only this profile
+  form: llm
+extra:
+  python:
+    source: tools/list_scheduled.py

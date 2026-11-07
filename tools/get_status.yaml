@@ -1,0 +1,31 @@
+identity:
+  name: get_status
+  author: reelspan
+  label:
+    en_US: Get post status
+description:
+  human:
+    en_US: Each network's result and link for a post, by request_id (or job_id for a scheduled post).
+  llm: Each network's result and link for a post, by request_id (or job_id for a scheduled post).
+parameters:
+- name: request_id
+  type: string
+  required: false
+  label:
+    en_US: Request ID
+  human_description:
+    en_US: The request_id from a publish tool
+  llm_description: The request_id from a publish tool
+  form: llm
+- name: job_id
+  type: string
+  required: false
+  label:
+    en_US: Job ID
+  human_description:
+    en_US: Or a scheduled post's job_id
+  llm_description: Or a scheduled post's job_id
+  form: llm
+extra:
+  python:
+    source: tools/get_status.py

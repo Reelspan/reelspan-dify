@@ -1,0 +1,35 @@
+name: CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      # until `reelspan` is on PyPI, take it from its repository; once it is, pip finds it on its own
+      - name: Reelspan client
+        run: pip install reelspan || pip install "git+https://github.com/Reelspan/reelspan-python"
+      - run: pip install -r requirements.txt pytest pyyaml
+      - run: pytest -q tests
+      - name: Tools match the generator
+        run: python scripts/generate_tools.py > /dev/null && git diff --exit-code tools/
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Package with the Dify CLI
+        run: |
+          curl -fsSL -o dify-plugin https://github.com/langgenius/dify-plugin-daemon/releases/download/0.6.15/dify-plugin-linux-amd64
+          chmod +x dify-plugin
+          ./dify-plugin plugin package . -o reelspan.difypkg
+      - uses: actions/upload-artifact@v4
+        with:
+          name: reelspan.difypkg
+          path: reelspan.difypkg

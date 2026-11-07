@@ -1,0 +1,13 @@
+identity:
+  name: list_profiles
+  author: reelspan
+  label:
+    en_US: List profiles
+description:
+  human:
+    en_US: List Reelspan profiles (brands) and the networks each has connected. Use it to find the profile username.
+  llm: List Reelspan profiles (brands) and the networks each has connected. Use it to find the profile username.
+parameters: []
+extra:
+  python:
+    source: tools/list_profiles.py

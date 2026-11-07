@@ -1,0 +1,125 @@
+identity:
+  name: upload_photos
+  author: reelspan
+  label:
+    en_US: Publish photos
+description:
+  human:
+    en_US: Publish or schedule one photo or a carousel (in order) to Instagram, TikTok, Facebook, X, LinkedIn, Pinterest, Threads, Bluesky and more.
+  llm: Publish or schedule one photo or a carousel (in order) to Instagram, TikTok, Facebook, X, LinkedIn, Pinterest, Threads, Bluesky and more.
+parameters:
+- name: profile
+  type: string
+  required: true
+  label:
+    en_US: Profile
+  human_description:
+    en_US: The Reelspan profile username whose connected accounts post (see List profiles)
+  llm_description: The Reelspan profile username whose connected accounts post (see List profiles)
+  form: llm
+- name: platforms
+  type: string
+  required: true
+  label:
+    en_US: Networks
+  human_description:
+    en_US: 'Comma-separated networks: tiktok, youtube, instagram, facebook, x, threads, linkedin, pinterest, bluesky, reddit, google_business, telegram, discord, slack, mastodon, nostr, lemmy, devto, hashnode,
+      wordpress, whop, listmonk'
+  llm_description: 'Comma-separated networks: tiktok, youtube, instagram, facebook, x, threads, linkedin, pinterest, bluesky, reddit, google_business, telegram, discord, slack, mastodon, nostr, lemmy, devto,
+    hashnode, wordpress, whop, listmonk'
+  form: llm
+- name: photos
+  type: files
+  required: false
+  label:
+    en_US: Photo files
+  human_description:
+    en_US: Uploaded images, in order
+  llm_description: Uploaded images, in order
+  form: llm
+- name: photo_urls
+  type: string
+  required: false
+  label:
+    en_US: Photo URLs
+  human_description:
+    en_US: Or public https URLs, comma-separated, in order
+  llm_description: Or public https URLs, comma-separated, in order
+  form: llm
+- name: caption
+  type: string
+  required: false
+  label:
+    en_US: Caption
+  human_description:
+    en_US: Caption, or the YouTube title
+  llm_description: Caption, or the YouTube title
+  form: llm
+- name: alt_texts
+  type: string
+  required: false
+  label:
+    en_US: Alt texts
+  human_description:
+    en_US: Alt text per photo, one per line, in order
+  llm_description: Alt text per photo, one per line, in order
+  form: llm
+- name: scheduled_date
+  type: string
+  required: false
+  label:
+    en_US: Schedule for
+  human_description:
+    en_US: 'Publish later: ISO-8601 date-time. Leave empty to post now.'
+  llm_description: 'Publish later: ISO-8601 date-time. Leave empty to post now.'
+  form: llm
+- name: timezone
+  type: string
+  required: false
+  label:
+    en_US: Timezone
+  human_description:
+    en_US: IANA timezone for the scheduled time, e.g. Europe/Berlin
+  llm_description: IANA timezone for the scheduled time, e.g. Europe/Berlin
+  form: llm
+- name: add_to_queue
+  type: boolean
+  required: false
+  label:
+    en_US: Add to queue
+  human_description:
+    en_US: Take the profile's next free queue slot
+  llm_description: Take the profile's next free queue slot
+  form: form
+  default: false
+- name: first_comment
+  type: string
+  required: false
+  label:
+    en_US: First comment
+  human_description:
+    en_US: Posted as the first comment
+  llm_description: Posted as the first comment
+  form: llm
+- name: settings
+  type: string
+  required: false
+  label:
+    en_US: Network settings (JSON)
+  human_description:
+    en_US: 'Other API fields as JSON, e.g. {"privacy_level": "PUBLIC_TO_EVERYONE", "reddit_subreddit": "videos"}'
+  llm_description: 'Other API fields as JSON, e.g. {"privacy_level": "PUBLIC_TO_EVERYONE", "reddit_subreddit": "videos"}'
+  form: llm
+- name: wait
+  type: boolean
+  required: false
+  label:
+    en_US: Wait for results
+  human_description:
+    en_US: Wait until every network has finished
+  llm_description: Wait until every network has finished
+  form: form
+  default: true
+extra:
+  python:
+    source: tools/upload_photos.py

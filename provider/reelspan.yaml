@@ -1,0 +1,49 @@
+identity:
+  author: reelspan
+  name: reelspan
+  label:
+    en_US: Reelspan
+  description:
+    en_US: Publish videos, photos, text and PDFs to 22 social networks, schedule them and read analytics.
+  icon: icon.svg
+  tags:
+    - social
+    - productivity
+    - videos
+    - image
+credentials_for_provider:
+  reelspan_api_key:
+    type: secret-input
+    required: true
+    label:
+      en_US: API Key
+    placeholder:
+      en_US: rs_live_...
+    help:
+      en_US: Create one in the Reelspan dashboard under Developers → API keys
+    url: https://app.reelspan.com/dashboard/api-keys
+  base_url:
+    type: text-input
+    required: false
+    label:
+      en_US: API base URL
+    placeholder:
+      en_US: https://api.reelspan.com
+    help:
+      en_US: Leave empty unless you use a staging or self-hosted API
+tools:
+  - tools/upload_text.yaml
+  - tools/upload_video.yaml
+  - tools/upload_photos.yaml
+  - tools/upload_document.yaml
+  - tools/get_status.yaml
+  - tools/retry_post.yaml
+  - tools/list_profiles.yaml
+  - tools/get_history.yaml
+  - tools/get_analytics.yaml
+  - tools/list_scheduled.yaml
+  - tools/cancel_scheduled.yaml
+  - tools/write_captions.yaml
+extra:
+  python:
+    source: provider/reelspan.py

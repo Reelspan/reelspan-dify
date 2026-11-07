@@ -1,0 +1,105 @@
+identity:
+  name: upload_document
+  author: reelspan
+  label:
+    en_US: Publish document
+description:
+  human:
+    en_US: Publish a PDF (or PPT/DOCX) to LinkedIn as a swipeable document.
+  llm: Publish a PDF (or PPT/DOCX) to LinkedIn as a swipeable document.
+parameters:
+- name: profile
+  type: string
+  required: true
+  label:
+    en_US: Profile
+  human_description:
+    en_US: The Reelspan profile username whose connected accounts post (see List profiles)
+  llm_description: The Reelspan profile username whose connected accounts post (see List profiles)
+  form: llm
+- name: document
+  type: file
+  required: false
+  label:
+    en_US: Document file
+  human_description:
+    en_US: An uploaded PDF
+  llm_description: An uploaded PDF
+  form: llm
+- name: document_url
+  type: string
+  required: false
+  label:
+    en_US: Document URL
+  human_description:
+    en_US: Or a public https URL of the PDF
+  llm_description: Or a public https URL of the PDF
+  form: llm
+- name: title
+  type: string
+  required: true
+  label:
+    en_US: Title
+  human_description:
+    en_US: The document title
+  llm_description: The document title
+  form: llm
+- name: scheduled_date
+  type: string
+  required: false
+  label:
+    en_US: Schedule for
+  human_description:
+    en_US: 'Publish later: ISO-8601 date-time. Leave empty to post now.'
+  llm_description: 'Publish later: ISO-8601 date-time. Leave empty to post now.'
+  form: llm
+- name: timezone
+  type: string
+  required: false
+  label:
+    en_US: Timezone
+  human_description:
+    en_US: IANA timezone for the scheduled time, e.g. Europe/Berlin
+  llm_description: IANA timezone for the scheduled time, e.g. Europe/Berlin
+  form: llm
+- name: add_to_queue
+  type: boolean
+  required: false
+  label:
+    en_US: Add to queue
+  human_description:
+    en_US: Take the profile's next free queue slot
+  llm_description: Take the profile's next free queue slot
+  form: form
+  default: false
+- name: first_comment
+  type: string
+  required: false
+  label:
+    en_US: First comment
+  human_description:
+    en_US: Posted as the first comment
+  llm_description: Posted as the first comment
+  form: llm
+- name: settings
+  type: string
+  required: false
+  label:
+    en_US: Network settings (JSON)
+  human_description:
+    en_US: 'Other API fields as JSON, e.g. {"privacy_level": "PUBLIC_TO_EVERYONE", "reddit_subreddit": "videos"}'
+  llm_description: 'Other API fields as JSON, e.g. {"privacy_level": "PUBLIC_TO_EVERYONE", "reddit_subreddit": "videos"}'
+  form: llm
+- name: wait
+  type: boolean
+  required: false
+  label:
+    en_US: Wait for results
+  human_description:
+    en_US: Wait until every network has finished
+  llm_description: Wait until every network has finished
+  form: form
+  default: true
+extra:
+  python:
+    source: tools/upload_document.py

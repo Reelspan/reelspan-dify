@@ -1,0 +1,31 @@
+identity:
+  name: retry_post
+  author: reelspan
+  label:
+    en_US: Retry failed networks
+description:
+  human:
+    en_US: Send the networks that failed again, with the media Reelspan already has.
+  llm: Send the networks that failed again, with the media Reelspan already has.
+parameters:
+- name: request_id
+  type: string
+  required: true
+  label:
+    en_US: Request ID
+  human_description:
+    en_US: The post's request_id
+  llm_description: The post's request_id
+  form: llm
+- name: platforms
+  type: string
+  required: false
+  label:
+    en_US: Networks
+  human_description:
+    en_US: Only these, comma-separated; empty for every failed network
+  llm_description: Only these, comma-separated; empty for every failed network
+  form: llm
+extra:
+  python:
+    source: tools/retry_post.py

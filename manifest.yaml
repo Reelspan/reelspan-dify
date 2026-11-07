@@ -1,0 +1,29 @@
+version: 0.1.0
+type: plugin
+author: reelspan
+name: reelspan
+label:
+  en_US: Reelspan
+description:
+  en_US: Publish videos, photos, text and PDFs to TikTok, YouTube, Instagram, X, LinkedIn, Bluesky and 16 more networks; schedule, retry, history and analytics.
+icon: icon.svg
+resource:
+  memory: 268435456
+  permission: {}
+plugins:
+  tools:
+    - provider/reelspan.yaml
+meta:
+  version: 0.0.1
+  arch:
+    - amd64
+    - arm64
+  runner:
+    language: python
+    version: "3.12"
+    entrypoint: main
+  minimum_dify_version: 1.0.0
+created_at: 2026-11-07T00:00:00Z
+privacy: PRIVACY.md
+repo: https://github.com/Reelspan/reelspan-dify
+verified: false

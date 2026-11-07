@@ -1,0 +1,22 @@
+# On a published release (tag v1.2.3, matching manifest.yaml): builds reelspan.difypkg and attaches it to the release,
+# ready to install in Dify (Plugins → Install from local package) or to submit to langgenius/dify-plugins.
+name: Release
+on:
+  release:
+    types: [published]
+permissions:
+  contents: write
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Tag matches manifest.yaml
+        run: test "v$(grep -m1 '^version:' manifest.yaml | awk '{print $2}')" = "${GITHUB_REF_NAME}"
+      - run: |
+          curl -fsSL -o dify-plugin https://github.com/langgenius/dify-plugin-daemon/releases/download/0.6.15/dify-plugin-linux-amd64
+          chmod +x dify-plugin
+          ./dify-plugin plugin package . -o reelspan-${GITHUB_REF_NAME}.difypkg
+          gh release upload "${GITHUB_REF_NAME}" reelspan-${GITHUB_REF_NAME}.difypkg --clobber
+        env:
+          GH_TOKEN: ${{ github.token }}

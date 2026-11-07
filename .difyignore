@@ -1,0 +1,8 @@
+.venv/
+.git/
+.github/
+tests/
+scripts/
+__pycache__/
+*.difypkg
+.pytest_cache/

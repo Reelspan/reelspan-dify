@@ -1,0 +1,57 @@
+identity:
+  name: get_history
+  author: reelspan
+  label:
+    en_US: Get post history
+description:
+  human:
+    en_US: Recent posts, one row per network, newest first.
+  llm: Recent posts, one row per network, newest first.
+parameters:
+- name: profile
+  type: string
+  required: false
+  label:
+    en_US: Profile
+  human_description:
+    en_US: Only this profile
+  llm_description: Only this profile
+  form: llm
+- name: platform
+  type: string
+  required: false
+  label:
+    en_US: Network
+  human_description:
+    en_US: Only this network
+  llm_description: Only this network
+  form: llm
+- name: status
+  type: select
+  required: false
+  label:
+    en_US: Status
+  human_description:
+    en_US: Only successes or failures
+  llm_description: Only successes or failures
+  form: llm
+  options:
+  - value: success
+    label:
+      en_US: Success
+  - value: failed
+    label:
+      en_US: Failed
+- name: limit
+  type: number
+  required: false
+  label:
+    en_US: Limit
+  human_description:
+    en_US: 10, 20 or 50
+  llm_description: 10, 20 or 50
+  form: llm
+  default: 20
+extra:
+  python:
+    source: tools/get_history.py
