@@ -2,7 +2,7 @@
 
 A [Dify](https://dify.ai) tool plugin for [Reelspan](https://reelspan.com). Let agents, chatflows and workflows publish
 videos, photos, text and PDFs to TikTok, YouTube, Instagram, Facebook, X, Threads, LinkedIn, Pinterest, Bluesky,
-Reddit and 12 more networks, then check results and read analytics.
+Reddit and more, then check results and read analytics.
 
 ## Install
 

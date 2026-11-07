@@ -5,7 +5,7 @@ name: reelspan
 label:
   en_US: Reelspan
 description:
-  en_US: Publish videos, photos, text and PDFs to TikTok, YouTube, Instagram, X, LinkedIn, Bluesky and 16 more networks; schedule, retry, history and analytics.
+  en_US: Publish videos, photos, text and PDFs to TikTok, YouTube, Instagram, X, LinkedIn, Bluesky and more; schedule, retry, history and analytics.
 icon: icon.svg
 resource:
   memory: 268435456
