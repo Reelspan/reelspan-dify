@@ -50,4 +50,10 @@ python scripts/generate_tools.py      # tools/*.yaml and tools/*.py come from on
 dify-plugin plugin package . -o reelspan.difypkg
 ```
 
+## Support
+
+- **Contact:** support@reelspan.com
+- **Source code and issues:** https://github.com/Reelspan/reelspan-dify
+- **Docs:** https://reelspan.com/docs
+
 Privacy: see [PRIVACY.md](PRIVACY.md). MIT licensed. Security reports: see [SECURITY.md](SECURITY.md).

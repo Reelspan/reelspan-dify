@@ -7,7 +7,7 @@ from typing import Any, Dict, List, Optional
 
 from reelspan import Reelspan, ReelspanError
 
-VERSION = "0.1.0"
+VERSION = "0.1.1"
 
 
 def client(credentials: Dict[str, Any]) -> Reelspan:
