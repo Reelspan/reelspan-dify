@@ -23,10 +23,10 @@ parameters:
   label:
     en_US: Networks
   human_description:
-    en_US: 'Comma-separated networks: tiktok, youtube, instagram, facebook, x, threads, linkedin, pinterest, bluesky, reddit, google_business, telegram, discord, slack, mastodon, nostr, lemmy, devto, hashnode,
-      wordpress, whop, listmonk'
-  llm_description: 'Comma-separated networks: tiktok, youtube, instagram, facebook, x, threads, linkedin, pinterest, bluesky, reddit, google_business, telegram, discord, slack, mastodon, nostr, lemmy, devto,
-    hashnode, wordpress, whop, listmonk'
+    en_US: 'Comma-separated networks: tiktok, youtube, instagram, facebook, x, threads, linkedin, pinterest, bluesky, reddit, google_business, telegram, discord, slack, mastodon, lemmy, devto, hashnode,
+      wordpress'
+  llm_description: 'Comma-separated networks: tiktok, youtube, instagram, facebook, x, threads, linkedin, pinterest, bluesky, reddit, google_business, telegram, discord, slack, mastodon, lemmy, devto, hashnode,
+    wordpress'
   form: llm
 - name: video
   type: file
