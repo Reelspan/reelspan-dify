@@ -1,4 +1,4 @@
-version: 0.1.2
+version: 0.1.3
 type: plugin
 author: reelspan
 name: reelspan
@@ -26,4 +26,12 @@ meta:
 created_at: 2026-11-07T00:00:00Z
 privacy: PRIVACY.md
 repo: https://github.com/Reelspan/reelspan-dify
+contact: support@reelspan.com
+tags:
+  - social
+  - videos
+  - image
+network:
+  domains:
+    - api.reelspan.com
 verified: false

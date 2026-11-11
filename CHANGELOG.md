@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.1.3
+
+- Manifest: support contact, marketplace tags and the API domain the plugin calls (api.reelspan.com).
+- Needs dify_plugin 0.9 or later; the Reelspan client is pinned below 2.0.
+
 ## 0.1.2
 
 - Dropped Whop, Listmonk, Nostr and Lemmy, which Reelspan no longer supports.
