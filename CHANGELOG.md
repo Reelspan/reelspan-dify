@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.2
+
+- Dropped Whop, Listmonk, Nostr and Lemmy, which Reelspan no longer supports.
+
 ## 0.1.1
 
 - README: support contact and source code links for the Dify Marketplace.
