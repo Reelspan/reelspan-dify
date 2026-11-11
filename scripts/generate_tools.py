@@ -7,7 +7,7 @@ import yaml
 
 # python scripts/generate_tools.py  (from the repository root) rewrites tools/*.yaml and tools/*.py
 root = Path(sys.argv[1]) if len(sys.argv) > 1 else Path(__file__).resolve().parent.parent
-NETS = "tiktok, youtube, instagram, facebook, x, threads, linkedin, pinterest, bluesky, reddit, google_business, telegram, discord, slack, mastodon, lemmy, devto, hashnode, wordpress"
+NETS = "tiktok, youtube, instagram, facebook, x, threads, linkedin, pinterest, bluesky, reddit, google_business, telegram, discord, slack, mastodon, devto, hashnode, wordpress"
 
 
 def P(name, type="string", required=False, label=None, desc="", form="llm", **kw):
